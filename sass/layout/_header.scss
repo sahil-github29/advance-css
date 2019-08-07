@@ -1,0 +1,44 @@
+.header {
+  height: 95vh;
+  /* order is important for both "gradient and image" because it will overlay*/
+  background-image: linear-gradient(
+      to right bottom,
+      $color-primary-light-alpha8,
+      $color-primary-dark-alpha8
+    ),
+    url("../img/hero.jpg");
+  background-size: cover;
+  background-position: top;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 85vh, 0% 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0% 100%);
+  position: relative;
+
+  @include respond(phone) {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 85vh, 0% 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 85vh, 0% 100%);
+  }
+
+  // &__logo-box === .header__logo-box
+  &__logo-box {
+    position: absolute;
+    top: 4rem;
+    left: 4rem;
+  }
+
+  /* Setting the size of the image:
+      Note: we just specified the height, and "width" will be automatically scale accordingly.
+      The width will be figured out automatically by the browser     
+  *****/
+  &__logo {
+    height: 7.5rem;
+  }
+
+  &__text-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    /* it moves the element 50% left and 50% top to it's size.  */
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+}

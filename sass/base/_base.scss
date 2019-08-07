@@ -1,0 +1,47 @@
+/*==================BASIC RESET STARTS HERE=======================*/
+/* Universal Selector:
+  Removes all the padding and margin from all the elements which browser adds by default.
+******/
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  /* force creating inheritance for box-sizing */
+  box-sizing: inherit;
+}
+
+/* html is a Root Element */
+html {
+  /* 1rem == 10  (10/16 = 62.5) */
+  font-size: 62.5%;
+
+  /* 1rem == 9  (9/16 = 56.25)   (width < 1200?) */
+  @include respond(tab-land) {
+    font-size: 56.25%;
+  }
+
+  /* 1rem == 8  (9/16 = 50)  (width < 900?)*/
+  @include respond(tab-port) {
+    font-size: 50%;
+  }
+
+  /* 1rem == 12  (12/16 = 75) */
+  @include respond(big-desktop) {
+    font-size: 75%;
+  }
+}
+
+/* Universal Font:
+We are using universal to body, because it can be inherited 
+******/
+body {
+  box-sizing: border-box;
+  padding: 3rem;
+
+  @include respond(tab-port) {
+    padding: 0;
+  }
+}
+
+/*==================BASIC RESET ENDS HERE=======================*/

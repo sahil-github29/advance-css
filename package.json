@@ -1,0 +1,21 @@
+{
+  "name": "advancecss",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "watch:sass": "node-sass sass/main.scss css/style.css -w",
+    "compile:sass": "node-sass sass/main.scss css/style.comp.css",
+    "concat:sass": "concat -o css/style.concat.css css/icon-fonts.css css/style.comp.css",
+    "prefix:css": "postcss --use autoprefixer -b 'last 10 versions' style.concat.css -o style.prefix.css"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "concat": "^1.0.3"
+  },
+  "devDependencies": {
+    "node-sass": "^4.11.0"
+  }
+}

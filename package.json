@@ -16,6 +16,6 @@
     "concat": "^1.0.3"
   },
   "devDependencies": {
-    "node-sass": "^4.11.0"
+    "node-sass": "^7.0.0"
   }
 }
